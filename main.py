@@ -58,6 +58,9 @@ def win_check(signs):
     if(signs[0]==signs[1]==signs[2]!=" " or 
        signs[3]==signs[4]==signs[5]!=" " or 
        signs[6]==signs[7]==signs[8]!=" " or 
+       signs[0]==signs[3]==signs[6]!=" " or 
+       signs[1]==signs[4]==signs[7]!=" " or 
+       signs[2]==signs[5]==signs[8]!=" " or 
        signs[2]==signs[5]==signs[6]!=" " or 
        signs[0]==signs[5]==signs[8]!=" " ):
         return 1
@@ -78,15 +81,16 @@ def main():
             board(signs)
             signs = player_1(signs)
             if win_check(signs) == 1:
+                board(signs)
                 print("Player 1 win!!")
                 break
         elif (x % 2 == 0):   
             board(signs)
             Signs = player_2(signs)
             if win_check(signs) == 1:
+                board(signs)
                 print("Player 2 win!!")
                 break
-        
-
+  
 if __name__ == "__main__":
     main()
